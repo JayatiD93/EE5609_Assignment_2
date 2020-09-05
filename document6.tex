@@ -289,33 +289,55 @@ svn co https://github.com/gadepall/school/trunk/ncert/geometry/figs
 
 
 \section{Problem}
-\input{./chapters/problem.tex}
-%In right triangle ABC, right angled at C, M is
-%the mid-point of hypotenuse AB. C is joined to
-%M and produced to a point D such that DM =
-%CM. Point D is joined to point B. Show that
-%
-%\begin{enumerate}[label = (\alph*)]
-%\item $\triangle  AMC  \cong   \triangle  BMD $
-%\item $\triangle DBC $ is a right angle.
-%\item $\triangle  DBC  \cong  \triangle  ABC $
-%\item $CM = \frac{1}{2} AB$
-%\end{enumerate}
+%\input{./chapters/problem.tex}
+Find the equation of the line that passes through (2  -1  4$)^T$ and is in the direction (1   2  -1$)^T$
 %\section{Construction}
 \section{Solution}
-\input{./chapters/constr.tex}
+%\input{./chapters/constr.tex}
 %
 %
+\renewcommand{\theequation}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\item The figure for the straight lines obtained in the question looks like Fig. \ref{fig:point_distance}.
+The line at the direction of (1  2  -1$)^T$ is represented by $\vec{b}$ and the line  that passes through (2  -1  4$)^T$ is represented by $\vec{a}$.
+\item Generating the points and the straight lines using python.\\
+\solution The  following Python code generates Fig. \ref{fig:point_distance}
+\begin{lstlisting}
+codes/line_Eqn1.py
+\end{lstlisting}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/line_Eqn3.png}
+\caption{The Straight line passing through a point at a particular direction}
+\label{fig:point_distance}
+\end{figure}
+
+\end{enumerate}
+
 %\section{Solution}
-\input{./chapters/solution.tex}
-%\subsection{Sol.a)}
-%\input{./chapters/sol_a.tex}
-%\subsection{Sol.b)}
-%\input{./chapters/sol_b.tex}
-%\subsection{Sol.c)}
-%\input{./chapters/sol_c.tex}
-%\subsection{Sol.d)}
-%\input{chapters/sol_d.tex}
+%\input{./chapters/solution.tex}
+\newcommand{\Cross}{\mathbin{\tikz [x=1.4ex,y=1.4ex,line width=.2ex] \draw (0,0) -- (1,1) (0,1) -- (1,0);}}
+
+As the line at the direction of (1  2  -1$)^T$ is represented by $\vec{b}$, so $\vec{b}$ is the direction vector and the point is $\vec{a}$ = (2  -1  4$)^T$ through which the line passes through.\\
+From the problem statement, we got:\\
+\begin{equation}
+\begin{aligned}
+      \vec{a} = \begin{pmatrix}
+      2 \\ 
+      -1 \\
+      4 \\
+      
+    \end{pmatrix} 
+\end{aligned}
+\end{equation}
+So, let us consider another point $P$ with $\vec{r}$ = (x y z$)^T$ on the line that passes through $\vec{a}$. \\
+\begin{equation}
+\begin{aligned}
+  \vec{r} = \vec{a} + \lambda \vec{b} \\
+  \end{aligned}
+\end{equation}
 
 
 \end{document}
